@@ -77,6 +77,15 @@
             margin-top: 0;
         }
 
+        /* Imagens responsivas */
+        .card img, .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
         /* Barra Lateral (Tabela) */
         .sidebar {
             flex: 1;
@@ -107,6 +116,12 @@
             background-color: #f1f1f1;
         }
 
+        /* Galeria de Fotos */
+        .gallery-section {
+            width: 100%;
+            margin-top: 10px;
+        }
+
         /* Rodapé */
         footer {
             background-color: #1b4332;
@@ -126,6 +141,7 @@
 
     <nav>
         <a href="#noticias">Notícias</a>
+        <a href="#galeria">Galeria</a>
         <a href="#tabela">Classificação</a>
         <a href="#contato">Contato</a>
     </nav>
@@ -134,11 +150,13 @@
         
         <section class="main-content" id="noticias">
             <article class="card">
+                <img src="http://googleusercontent.com/image_generation_content/0" alt="Grande Final do Campeonato - Jogo no Estádio">
                 <h2>Grande Final do Campeonato Acontece neste Domingo</h2>
                 <p>Os dois melhores times da temporada se enfrentam na disputa pelo título nacional. A expectativa é de estádio lotado e um jogo emocionante do início ao fim.</p>
             </article>
 
             <article class="card">
+                <img src="http://googleusercontent.com/image_generation_content/0" alt="Jogador com a Bola em Campo">
                 <h2>Mercado da Bola: Novas Contratações em Destaque</h2>
                 <p>Janela de transferências movimenta o cenário futebolístico com contratações milionárias e surpresas na movimentação dos clubes.</p>
             </article>
@@ -180,6 +198,16 @@
                 </table>
             </div>
         </aside>
+
+        <section class="gallery-section" id="galeria">
+            <div class="card">
+                <h2>Galeria de Momentos do Futebol</h2>
+                <p>Confira os detalhes das quatro imagens: o jogo profissional, a paixão das crianças na várzea, a disputa pela posse de bola e os detalhes da chuteira no campo de grama.</p>
+                <div class="gallery">
+                    <img src="http://googleusercontent.com/image_generation_content/0" alt="Mosaico com 4 imagens sobre futebol">
+                </div>
+            </div>
+        </section>
 
     </div>
 
