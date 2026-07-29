@@ -1,329 +1,191 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-<head>
-<meta charset="UTF-8">
-<title>O Futebol</title>
-<link rel-"stylesheet" href="style.css">
-</head>
-<body>
-<header>
-<h1>O Futebol</h1>
-</header>
-<nav>
-<a href="#">Início</a>| <a href="#">Sobre</a>
-</ nav>
-<main>
-<h2>Título da Postagem</h2>
-<p›Este é o meu primeiro site criado na escola!</p> <img src="[aqui você puxa imagens que você armazenou
-no GitHub dentro de uma pasta]" alt="Minha Imagem">
-</main>
-</body>
-</html>
-
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futebol Mania</title>
-
+    <title>Mundo do Futebol</title>
     <style>
-        * {
+        /* Estilos gerais da página */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
-
-        body {
-            background: #f2f2f2;
+            background-color: #f4f4f9;
             color: #333;
         }
 
+        /* Cabeçalho */
         header {
-            background: #0b7a2f;
+            background-color: #1b4332;
             color: white;
-            padding: 20px;
+            padding: 20px 0;
             text-align: center;
         }
 
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        /* Menu de Navegação */
         nav {
-            background: #065d22;
+            background-color: #2d6a4f;
             display: flex;
             justify-content: center;
-            <section class="pesquisa">
-    <h2>🔎 Pesquise um assunto</h2>
-    <input type="text" id="pesquisa" placeholder="Ex: Copa do Mundo, Neymar, Regras...">
-    <button onclick="pesquisar()">Pesquisar</button>
-
-    <div id="resultado"></div>
-</section>
         }
 
         nav a {
             color: white;
+            padding: 14px 20px;
             text-decoration: none;
-            padding: 15px 20px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
         }
 
         nav a:hover {
-            background: #0a8f37;
+            background-color: #52b788;
+            color: #1b4332;
         }
 
-        .banner {
-            background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)),
-            url("https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=1400&q=80");
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
-
-        .banner h2 {
-            font-size: 48px;
-        }
-
+        /* Layout principal */
         .container {
-            width: 90%;
-            max-width: 1100px;
-            margin: 40px auto;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
         }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-            gap: 20px;
+        /* Seção de Notícias */
+        .main-content {
+            flex: 2;
+            min-width: 300px;
         }
 
         .card {
             background: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 3px 10px rgba(0,0,0,.2);
-            transition: 0.3s;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
 
-        .card:hover {
-            transform: translateY(-5px);
+        .card h2 {
+            color: #1b4332;
+            margin-top: 0;
         }
 
+        /* Barra Lateral (Tabela) */
+        .sidebar {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #2d6a4f;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        /* Rodapé */
         footer {
-            background: #0b7a2f;
+            background-color: #1b4332;
             color: white;
             text-align: center;
-            padding: 20px;
+            padding: 15px 0;
             margin-top: 40px;
-        }
-
-        button {
-            margin-top: 15px;
-            padding: 10px 20px;
-            border: none;
-            background: #0b7a2f;
-            color: white;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background: #08812f;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>⚽ Futebol Mania</h1>
-    <p>O melhor lugar para quem ama futebol!</p>
-</header>
+    <header>
+        <h1>Mundo do Futebol</h1>
+        <p>Tudo sobre o esporte mais amado do planeta</p>
+    </header>
 
-<nav>
-    <a href="#">Início</a>
-    <a href="#">Times</a>
-    <a href="#">Jogadores</a>
-    <a href="#">Campeonatos</a>
-    <a href="#">Contato</a>
-</nav>
+    <nav>
+        <a href="#noticias">Notícias</a>
+        <a href="#tabela">Classificação</a>
+        <a href="#contato">Contato</a>
+    </nav>
 
-<section class="banner">
-    <h2>Viva a emoção do futebol!</h2>
-    <p>Notícias, curiosidades e informações sobre o esporte mais amado do mundo.</p>
-</section>
+    <div class="container">
+        
+        <section class="main-content" id="noticias">
+            <article class="card">
+                <h2>Grande Final do Campeonato Acontece neste Domingo</h2>
+                <p>Os dois melhores times da temporada se enfrentam na disputa pelo título nacional. A expectativa é de estádio lotado e um jogo emocionante do início ao fim.</p>
+            </article>
 
-<div class="container">
+            <article class="card">
+                <h2>Mercado da Bola: Novas Contratações em Destaque</h2>
+                <p>Janela de transferências movimenta o cenário futebolístico com contratações milionárias e surpresas na movimentação dos clubes.</p>
+            </article>
+        </section>
 
-    <h2>Destaques</h2>
-    <br>
+        <aside class="sidebar" id="tabela">
+            <div class="card">
+                <h2>Tabela de Líderes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Pos</th>
+                            <th>Clube</th>
+                            <th>Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Time Verde</td>
+                            <td>45</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Time Azul</td>
+                            <td>42</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Time Vermelho</td>
+                            <td>38</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Time Amarelo</td>
+                            <td>35</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </aside>
 
-    <div class="cards">
+    </div>
 
-        <div class="card">
-            <h3>🏆 Campeonatos</h3>
-            <p>Confira informações sobre os principais campeonatos nacionais e internacionais.</p>
-            <button onclick="alert('Em breve mais informações!')">Saiba mais</button>
-        </div>
-
-        <div class="card">
-            <h3>⭐ Grandes Jogadores</h3>
-            <p>Conheça atletas que marcaram a história do futebol mundial.</p>
-            <button onclick="alert('Página em desenvolvimento!')">Ver jogadores</button>
-        </div>
-
-        <div class="card">
-            <h3>⚽ Curiosidades</h3>
-            <p>Descubra fatos interessantes sobre o universo do futebol.</p>
-            <button onclick="mostrarMensagem()">Ler curiosidade</button>
-        </div>
-
-    </div> class<section id="historia">
-    <h2>📖 História do Futebol</h2>
-
-    <p>
-        O futebol surgiu na Inglaterra no século XIX e rapidamente se tornou o esporte
-        mais popular do planeta. Atualmente, milhões de pessoas acompanham campeonatos,
-        torcem por seus clubes e praticam esse esporte em diversos países.
-    </p>
-
-    <p>
-        A primeira Copa do Mundo aconteceu em 1930, no Uruguai. Desde então, o torneio
-        reúne as melhores seleções do mundo e é considerado o maior evento do futebol.
-    </p>
-
-    <h2>⚽ Regras Básicas</h2>
-
-    <p>
-        Uma partida é disputada por duas equipes com 11 jogadores cada. O objetivo é
-        marcar mais gols que o adversário dentro de 90 minutos, divididos em dois tempos
-        de 45 minutos.
-    </p>
-
-    <h2>🏆 Principais Campeonatos</h2>
-
-    <ul>
-        <li>Copa do Mundo FIFA</li>
-        <li>UEFA Champions League</li>
-        <li>Copa Libertadores</li>
-        <li>Campeonato Brasileiro</li>
-        <li>Copa do Brasil</li>
-        <li>Premier League</li>
-        <li>La Liga</li>
-    </ul>
-
-    <h2>⭐ Grandes Jogadores</h2>
-
-    <p>
-        Alguns dos maiores jogadores da história são Pelé, Lionel Messi, Cristiano Ronaldo,
-        Diego Maradona, Ronaldo Fenômeno, Zico, Ronaldinho Gaúcho, Neymar e muitos outros
-        que marcaram época com seus talentos.
-    </p>
-
-    <h2>💚 Por que o futebol é tão importante?</h2>
-
-    <p>
-        O futebol promove diversão, trabalho em equipe, disciplina e respeito. Além disso,
-        movimenta a economia, gera empregos e une pessoas de diferentes culturas através
-        da paixão pelo esporte.
-    </p>
-</section>
-
-</div>
-
-<footer>
-    <p>&copy; 2026 Futebol Mania - Todos os direitos reservados.</p>
-</footer>
-
-<script>
-function mostrarMensagem() {
-    alert("Você sabia? A primeira Copa do Mundo foi realizada em 1930, no Uruguai!");
-}
-</script>
+    <footer id="contato">
+        <p>&copy; 2026 Mundo do Futebol. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
